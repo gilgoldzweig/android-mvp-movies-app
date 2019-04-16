@@ -36,7 +36,7 @@ public class MoviesBaseAdapter extends RecyclerView.Adapter<MoviesBaseAdapter.Vi
         mDataSource = items;
         mInflater =  LayoutInflater.from(context);
         movieClickListener = listener;
-        picasso = Picasso.get();
+        picasso = Picasso.get(); //GOOD use of constructor
     }
 
     @NonNull

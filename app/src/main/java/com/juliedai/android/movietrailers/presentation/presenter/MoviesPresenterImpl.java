@@ -11,33 +11,35 @@ import java.util.List;
 
 /**
  * @author  Julie Dai
+ * TODO missing proper comments
  */
 
-public class MoviesPresenterImpl implements Contract.Presenter{
+public class MoviesPresenterImpl implements Contract.Presenter{ //TODO missing space
 
     private static final String LOG_TAG = "_MoviesActivity_";
     private final MoviesInteractor interactor;
     private final Contract.View view;
 
     public MoviesPresenterImpl(Contract.View view) {
+      //Move this to be a part of the constructor so you don't create a dependency
       this.interactor = new MoviesInteractor(view.getViewContext());
       this.view = view;
 
       loadData();
   }
 
-    private void loadData(){
+    private void loadData(){//TODO missing space
       view.showLoading();
       this.interactor.retrieveMovies(new Listener<List<MovieModel>>() {
         @Override
         public void onSuccess(List<MovieModel> movieModels) {
-          view.hideLoading();
+          view.hideLoading(); //TODO This should be a part of the view not part of the presenter
           view.loadMovies(movieModels);
         }
 
         @Override
         public void onFailure() {
-          view.hideLoading();
+          view.hideLoading(); //TODO This should be a part of the view not part of the presenter
           view.onError();
         }
       });
@@ -47,7 +49,7 @@ public class MoviesPresenterImpl implements Contract.Presenter{
     public void onMovieClicked(int position) {
       if (interactor.isItemPositionCorrect(position)) {
         view.openMovieDetails(position);
-      }else{
+      }else{//TODO missing space
         Log.d(LOG_TAG, "> Presenter > onMovieClicked: Item position incorrect");
       }
     }
@@ -59,7 +61,7 @@ public class MoviesPresenterImpl implements Contract.Presenter{
 
   @Override
   public void onMenuReloadClicked() {
-    view.clearAdapter();
+    view.clearAdapter(); //TODO This should be a part of the view not part of the presenter
     loadData();
   }
 }

@@ -22,6 +22,11 @@ allprojects {
     }
 }
 
+//TODO this is how you can use global versioning
+ext {
+    version_retrofit = '2.4.0'
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

@@ -12,20 +12,20 @@ import java.util.List;
 
 public interface Contract {
     interface View {
+        //TODO who loads the movies and if this is movies loaded why is it not called onMoviesLoaded()
         void loadMovies(List<MovieModel> movies);
 
         void openMovieDetails(int position);
 
-        void showLoading();
+        void showLoading(); //TODO Remove
 
-        void hideLoading();
+        void hideLoading(); //TODO Remove
 
-        void clearAdapter();
+        void clearAdapter(); //TODO Remove
 
-        Context getViewContext();
+        Context getViewContext();  //TODO Remove should not pass android elements to the presenter
 
-        void onError();
-
+        void onError(); //TODO what error?
     }
 
     interface Presenter {
@@ -35,6 +35,6 @@ public interface Contract {
 
         void onMenuReloadClicked();
     }
-
-
+    //TODO To much space
+    //TODO To much space
 }

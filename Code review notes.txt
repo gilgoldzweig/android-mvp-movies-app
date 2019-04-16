@@ -1,0 +1,6 @@
+1. Missing tests. not a must but you should invest the time in writing tests
+2. Gradle file needs some work see TODO'S in files
+3. Try to rearrange your file structure
+4. Fix your spacing
+5. you need to separate your views better from the presenter your presenters should only perform logic, in an async way
+6. Replace AsyncTask with something else i.e: RxJava just not AsyncTask: Good luck
